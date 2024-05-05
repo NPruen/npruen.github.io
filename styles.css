@@ -1,0 +1,22 @@
+body {
+	background-color:aliceblue;
+}
+
+h1 {
+	text-align:center;
+	color:navy;
+}
+
+.left {
+	position: absolute;
+	right: 50%;
+	text-align: right;
+	width: 30%;
+	padding: 10px;
+}
+
+.right {
+	position: absolute;
+	left: 50%;
+	padding: 10px;
+}
