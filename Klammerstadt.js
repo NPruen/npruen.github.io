@@ -22,6 +22,8 @@ function parseNewGuess() {
 	// generate open questions
 	const offeneFragen = getInnerBracketSubstrings(puzzleText);
 
+	let gefundeneLösungen = []
+
 	// check if guess is solution to open question
 	if (frageAntwortArr) {
 		const matches = frageAntwortArr.filter(([frage, antwort]) => antwort.toLowerCase() === guess.toLowerCase());
@@ -29,23 +31,32 @@ function parseNewGuess() {
 			// checken ob frage bereits lösbar ist
 			if (offeneFragen.some(f => f.toLowerCase() === found[0].toLowerCase())) {
 				gelösteKlammern.unshift(found);
+				gefundeneLösungen.push(found);
 			}
 		});
 	}
 
 	// replace question with solution
-	gelösteKlammern.forEach(([frage, antwort]) => {
+	gefundeneLösungen.forEach(([frage, antwort]) => {
 		const regex = new RegExp(`\\[${frage.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\]`, 'i');
 		puzzleText = puzzleText.replace(regex, antwort);
 	});
 	displayPuzzleText();
 
-	// replace question with answer
 
-	inputFeld.value = '';
-
+	// update fields
 	guesses.innerHTML = solvedBracketsToSTring();
+
+	checkForFullSolution();
+	inputFeld.value = '';
 	inputFeld.focus();
+}
+
+function checkForFullSolution(){
+	if (puzzleText === JSONdata.gesamtlösung){
+		puzzleText = [puzzleText, "Juhuu, Rätsel gelöst! Das hat gar nicht lang gedauert..."].join("<br /><br />");
+		displayPuzzleText();
+	}
 }
 
 function solvedBracketsToSTring() {
@@ -58,11 +69,16 @@ function displayPuzzleText() {
 	let displayText = "";
 	let innerIndices = getInnerBracketIndices(puzzleText);
 	let lastEnd = 0;
-	innerIndices.forEach(([start, end]) => {
-		displayText += puzzleText.substring(lastEnd, start-1);
-		displayText += "<mark>" + puzzleText.substring(start, end+1) + "</mark>";
-		lastEnd = end;
-	});
+	if(innerIndices.length === 0) {
+		displayText = puzzleText;
+	} else {
+		innerIndices.forEach(([start, end]) => {
+			displayText += puzzleText.substring(lastEnd, start);
+			displayText += "<mark>" + puzzleText.substring(start, end + 1) + "</mark>";
+			lastEnd = end + 1;
+		});
+		displayText += puzzleText.substring(lastEnd);
+	}
 	puzzleTextField.innerHTML = displayText;
 }
 
@@ -120,5 +136,5 @@ inputFeld.addEventListener('keydown', function (event) {
 
 
 // load file
-loadJSON('raetsel/raetsel15.json');
+loadJSON('raetsel/aktuelles.json');
 inputFeld.focus();
