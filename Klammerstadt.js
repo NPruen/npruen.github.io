@@ -136,5 +136,5 @@ inputFeld.addEventListener('keydown', function (event) {
 
 
 // load file
-loadJSON('raetsel/aktuelles.json');
+loadJSON('raetsel/Fachschaftsfeiertag_04-08-25_MV.json');
 inputFeld.focus();
