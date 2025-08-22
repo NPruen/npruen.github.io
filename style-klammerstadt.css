@@ -18,11 +18,11 @@ input {
 }
 
 button {
-	border: 2px solid #FFB6C1;
+	border: 2px solid grey;
 }
 
 button:hover {
-	background-color: #FFB6C1;
+	background-color: grey;
 }
 
 .parseInputButton {
