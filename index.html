@@ -10,23 +10,36 @@
             background-color: #f0f0f0;
             background-image: url('images/background.jpg');
             background-repeat: repeat;
+            background-attachment: fixed;
             color: #333333;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
 
+        h1, h2 {
+            font-family: 'Times New Roman', serif;
+            color: #000000;
+        }
+
+        h3, h4, h5, h6 {
+            font-family: 'Times New Roman', serif;
+            color: #000000;
+            padding-top: 10px;
+        }
+
         section {
             font-family: 'Courier New', monospace;
-            background-color: #ffffff;
+            background-color: #f1e3bf;
             border: 1px solid #cccccc;
-            padding: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
             margin: 20px;
         }
 
         header {
-            font-family: 'Times New Roman', serif;
-            background-color: #ffffff;
+            font-family: 'Courier New', monospace;
+            background-color: #f1e3bf;
             border: 1px solid #cccccc;
             margin: 20px;
             padding-left: 20px;
@@ -37,11 +50,37 @@
 
 <body>
     <header>
-        <h1>Niklas Eberhard</h1>
+        <aside>
+            <img src="images/niklas.jpg" alt="Niklas" style="width: 150px; height: auto; float: left; margin-right: 20px; margin-top: 20px;">
+        </aside>
+        <h1>Niklas Prün</h1>
+        <h1 style="color: red;">UNDER CONSTRUCTION!</h1>
+        <p>I am a mathematics masters student with interest in graph theory and combinatorics. This page contains math content as well as several of my hobbies.</p>
+        <p>For now this site is a dummy, I am writing it from scratch trying to learn web development and adding content as I go.</p>
     </header>
 
-    <section>
-        <p>I am a mathematics masters student with interest in graph theory and combinatorics. This page contains math content as well as several of my hobbies.</p>
+    <section id="math">
+        <h2>Math</h2>
+        <p>I am currently working on my masters thesis about sections of cross-polytopes.</p>
+
+        <h3>Programming Projects</h3>
+        <p>In the future there will be a collections of mathy coding projects and visualizations.</p>
+
+        <h3>Math Resources</h3>
+        <p>A random collection of math resources I have deemed useful or fun to look through.</p>
+
+    </section>
+
+    <section id="music">
+        <h2>Drum Sheet music</h2>
+        <p>I am the drummer of the Math Faculty Gang, a band consisting of members of my university's mathematics department. Also I enjoy jamming with friends, we have a band called "Tilted Candle" (the name of which I dislike, but the members are cool). </p>
+    </section>
+
+    <section id="coding">
+        <h2>Coding projects</h2>
+        <h3>Klammerstadt</h3>
+        <a href="https://klammerstadt.de/">klammerstadt.de</a>
+        <p>A german language <a href="https://www.theatlantic.com/games/bracket-city/">Bracket City</a> clone built by my friend Moritz and I. We only created one level so far, and haven't worked on it in over one year, so don't expect any updates in the near future.</p>
     </section>
 </body>
 </html>
