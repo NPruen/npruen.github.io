@@ -30,7 +30,7 @@
 
         section {
             font-family: 'Courier New', monospace;
-            background-color: #f1e3bf;
+            background-color: #eeeeee;
             border: 1px solid #cccccc;
             padding-left: 20px;
             padding-right: 20px;
@@ -38,25 +38,42 @@
         }
 
         header {
-            font-family: 'Courier New', monospace;
-            background-color: #f1e3bf;
+            flex-direction: row;
+            background-color: #eeeeee;
             border: 1px solid #cccccc;
+            display: flex;
             margin: 20px;
-            padding-left: 20px;
-            padding-right: 20px;
+            padding: 20px;
         }
+
+        .header-image {
+            width: 300px;
+            height: auto;
+            float: left;
+            margin-right: 20px;
+            margin-top: 20px;
+        }
+
+        .header-text {
+            font-family: 'Courier New', monospace;
+            flex-direction: column;
+        }
+
+        .
     </style>
 </head>
 
 <body>
     <header>
-        <aside>
-            <img src="images/niklas.jpg" alt="Niklas" style="width: 150px; height: auto; float: left; margin-right: 20px; margin-top: 20px;">
-        </aside>
-        <h1>Niklas Prün</h1>
-        <h1 style="color: red;">UNDER CONSTRUCTION!</h1>
-        <p>I am a mathematics masters student with interest in graph theory and combinatorics. This page contains math content as well as several of my hobbies.</p>
-        <p>For now this site is a dummy, I am writing it from scratch trying to learn web development and adding content as I go.</p>
+        <div class="header-image">
+            <img src="images/niklas.jpg" alt="Niklas" style="width: 300px; height: auto;">
+        </div>
+        <div class="header-text">
+            <h1>Niklas Prün</h1>
+            <h1 style="color: red;">PAGE UNDER CONSTRUCTION!</h1>
+            <p>I am a mathematics masters student with interest in graph theory and combinatorics.  This page contains math content as well as several of my hobbies.</p>
+            <p>For now this site is a dummy, I am writing it from scratch trying to learn web development and adding content as I go.</p>
+        </div>
     </header>
 
     <section id="math">
@@ -73,7 +90,7 @@
 
     <section id="music">
         <h2>Drum Sheet music</h2>
-        <p>I am the drummer of the Math Faculty Gang, a band consisting of members of my university's mathematics department. Also I enjoy jamming with friends, we have a band called "Tilted Candle" (the name of which I dislike, but the members are cool). </p>
+        <p>Currently I play the drums for the Math Faculty Gang, a band consisting of members of my university's mathematics department. Also I enjoy jamming with friends, we have a band called "Tilted Candle" (the name of which I dislike, but the members are cool). </p>
     </section>
 
     <section id="coding">
